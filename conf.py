@@ -21,7 +21,7 @@ BLOG_AUTHOR = "yannpaul"  # (translatable)
 BLOG_TITLE = "yield this"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "https://yannpaul.github.io/blog"
+SITE_URL = "https://yannpaul.github.io/blog/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://yannpaul.github.io/"
@@ -130,7 +130,7 @@ NAVIGATION_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "ipython"
 
 # Below this point, everything is optional
 
@@ -203,6 +203,7 @@ TIMEZONE = "UTC-4"
 
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
+    ("posts/*.ipynb", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
 )
 PAGES = (
