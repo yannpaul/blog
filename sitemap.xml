@@ -5,31 +5,31 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://yannpaul.github.io/</loc>
+  <loc>https://yannpaul.github.io/blog/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/2015/</loc>
+  <loc>https://yannpaul.github.io/blog/2015/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/archive.html</loc>
+  <loc>https://yannpaul.github.io/blog/archive.html</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/categories/</loc>
+  <loc>https://yannpaul.github.io/blog/categories/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/galleries/</loc>
+  <loc>https://yannpaul.github.io/blog/galleries/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/listings/</loc>
+  <loc>https://yannpaul.github.io/blog/listings/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/posts/demo/</loc>
+  <loc>https://yannpaul.github.io/blog/posts/demo/</loc>
   <lastmod>2015-07-09</lastmod>
  </url>
 </urlset>

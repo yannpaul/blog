@@ -1,2 +1,2 @@
-Sitemap: https://yannpaul.github.io/sitemapindex.xml
+Sitemap: https://yannpaul.github.io/blog/sitemapindex.xml
 
