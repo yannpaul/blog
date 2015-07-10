@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>galleries | yield this</title>
 <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
@@ -29,24 +31,23 @@
 
 <!-- Menubar -->
 
-<div class="navbar navbar-static-top" id="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </a>
-
-            <a class="brand" href="https://yannpaul.github.io/blog/">
+            </button>
+            <a class="navbar-brand" href="https://yannpaul.github.io/blog/">
 
                 <span id="blog-title">yield this</span>
             </a>
-            <!-- Everything you want hidden at 940px or less, place within here -->
-            <div class="nav-collapse collapse">
-                <ul class="nav">
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
 <li>
 <a href="../archive.html">Archive</a>
                 </li>
@@ -56,42 +57,35 @@
 <li>
 <a href="../rss.xml">RSS feed</a>
 
-                    
-                </li>
-</ul>
-<ul class="nav pull-right">
-<li>
                 
-                </ul>
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
 </div>
-        </div>
+<!-- /.navbar-collapse -->
     </div>
-</div>
-<!-- End of Menubar -->
-<div class="container-fluid" id="content" role="main">
-    <!--Body content-->
-    <div class="row-fluid">
-    <div class="span2"></div>
-    <div class="span8">
-    
-    
-    
-<nav class="breadcrumbs"><ul class="breadcrumb">
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+    <nav class="breadcrumbs"><ul class="breadcrumb">
 <li>galleries</li>
 </ul></nav><h1>galleries</h1>
 
 <div id="gallery_container"></div>
+        </div>
+        <!--End of body content-->
 
-    </div>
-    </div>
-    <!--End of body content-->
+        <footer id="footer">
+            Contents © 2015         <a href="mailto:yannpaulhub@gmail.com">yannpaul</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
 </div>
-<div class="footerbox">
-    Contents © 2015         <a href="mailto:yannpaulhub@gmail.com">yannpaul</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
-    
 </div>
 
-            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.js"></script><script src="../assets/js/mathjax.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script src="../assets/js/flowr.plugin.js"></script><script>
