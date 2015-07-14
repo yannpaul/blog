@@ -18,11 +18,23 @@
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/categories/</loc>
-  <lastmod>2015-07-10</lastmod>
+  <lastmod>2015-07-13</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/categories/cookiecutter/</loc>
+  <lastmod>2015-07-13</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/categories/gtest/</loc>
+  <lastmod>2015-07-13</lastmod>
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/categories/personal/</loc>
   <lastmod>2015-07-10</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/categories/topcoder/</loc>
+  <lastmod>2015-07-13</lastmod>
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/galleries/</loc>
@@ -33,15 +45,11 @@
   <lastmod>2015-07-09</lastmod>
  </url>
  <url>
-  <loc>https://yannpaul.github.io/blog/posts/demo/</loc>
-  <lastmod>2015-07-09</lastmod>
- </url>
- <url>
-  <loc>https://yannpaul.github.io/blog/posts/ipython-notebook-demo/</loc>
-  <lastmod>2015-07-09</lastmod>
- </url>
- <url>
   <loc>https://yannpaul.github.io/blog/posts/names/</loc>
   <lastmod>2015-07-10</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/posts/topcoder/</loc>
+  <lastmod>2015-07-13</lastmod>
  </url>
 </urlset>
