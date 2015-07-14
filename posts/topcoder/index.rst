@@ -19,4 +19,4 @@ tests match the examples provided in each problem description. Ideally
 I would create a scraper that would pull all the values down from the site
 automagically, but for now I populate some of the details
 manually. `Take a
-look<https://github.com/yannpaul/cookiecutter-gtest>`_ for yourself. 
+look <https://github.com/yannpaul/cookiecutter-gtest>`_ for yourself. 
