@@ -7,7 +7,7 @@
 .. description: How I work on topcoder problems locally. 
 .. type: text
 
-I've only recently came across topcoder, a site where you can develop your
+I've only recently came across `topcoder <https://www.topcoder.com/community/data-science/data-science-tutorials/`_, a site where you can develop your
 programming and design skills. They provide a UI to practice coding
 and to compete in speed and code-quality challenges. It's a fine
 interface, but I'd rather code in my own environment. I've developed a
