@@ -1,40 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>yield this</title><link>https://yannpaul.github.io/blog/</link><description>Yet another blog...</description><atom:link href="https://yannpaul.github.io/blog/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Aug 2015 13:07:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>phone_how_to</title><link>https://yannpaul.github.io/blog/posts/phone_how_to/</link><dc:creator>yannpaul</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; from phones import PhoneNumber
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;To create a number, you just provide it as a string or integer&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; PhoneNumber(1112223333, 'home')
-[home] (111) 222-3333
-&amp;gt;&amp;gt;&amp;gt; PhoneNumber("1112223333", 'home')
-[home] (111) 222-3333
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You can also add the optional '1' at the beginning:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; PhoneNumber("11112223333", 'home')
-[home] (111) 222-3333
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Parenthases, dashes or spaces are ignored:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; number = PhoneNumber("111-222-3333", 'home')
-&amp;gt;&amp;gt;&amp;gt; number
-[home] (111) 222-3333
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If for any reason you need the raw number, and not the string representation, it's available like so:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="doctest-block"&gt;
-&amp;gt;&amp;gt;&amp;gt; number.raw_number
-'1112223333'
-&lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><guid>https://yannpaul.github.io/blog/posts/phone_how_to/</guid><pubDate>Tue, 04 Aug 2015 04:00:00 GMT</pubDate></item><item><title>Teaching Testing</title><link>https://yannpaul.github.io/blog/posts/teaching-testing/</link><dc:creator>yannpaul</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>yield this</title><link>https://yannpaul.github.io/blog/</link><description>Yet another blog...</description><atom:link href="https://yannpaul.github.io/blog/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Aug 2015 13:08:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Teaching Testing</title><link>https://yannpaul.github.io/blog/posts/teaching-testing/</link><dc:creator>yannpaul</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;

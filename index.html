@@ -64,52 +64,7 @@ article: http://ogp.me/ns/article#
         <div class="row">
             
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/phone_how_to/" class="u-url">phone_how_to</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">yannpaul</span></p>
-            <p class="dateline"><a href="posts/phone_how_to/" rel="bookmark"><time class="published dt-published" datetime="2015-08-04T00:00:00-04:00" itemprop="datePublished" title="Publication date">2015-08-04 00:00</time></a></p>
-        </div>
-    </header><div class="e-content entry-content">
-    <div>
-<blockquote>
-<pre class="doctest-block">
-&gt;&gt;&gt; from phones import PhoneNumber
-</pre>
-</blockquote>
-<p>To create a number, you just provide it as a string or integer</p>
-<blockquote>
-<pre class="doctest-block">
-&gt;&gt;&gt; PhoneNumber(1112223333, 'home')
-[home] (111) 222-3333
-&gt;&gt;&gt; PhoneNumber("1112223333", 'home')
-[home] (111) 222-3333
-</pre>
-</blockquote>
-<p>You can also add the optional '1' at the beginning:</p>
-<blockquote>
-<pre class="doctest-block">
-&gt;&gt;&gt; PhoneNumber("11112223333", 'home')
-[home] (111) 222-3333
-</pre>
-</blockquote>
-<p>Parenthases, dashes or spaces are ignored:</p>
-<blockquote>
-<pre class="doctest-block">
-&gt;&gt;&gt; number = PhoneNumber("111-222-3333", 'home')
-&gt;&gt;&gt; number
-[home] (111) 222-3333
-</pre>
-</blockquote>
-<p>If for any reason you need the raw number, and not the string representation, it's available like so:</p>
-<blockquote>
-<pre class="doctest-block">
-&gt;&gt;&gt; number.raw_number
-'1112223333'
-</pre>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/teaching-testing/" class="u-url">Teaching Testing</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/teaching-testing/" class="u-url">Teaching Testing</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">yannpaul</span></p>
             <p class="dateline"><a href="posts/teaching-testing/" rel="bookmark"><time class="published dt-published" datetime="2015-08-03T16:45:35-04:00" itemprop="datePublished" title="Publication date">2015-08-03 16:45</time></a></p>
