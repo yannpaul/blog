@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>yield this (python)</title><link>https://yannpaul.github.io/blog/</link><description></description><atom:link href="https://yannpaul.github.io/blog/categories/python.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 04 Aug 2015 13:07:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Teaching Testing</title><link>https://yannpaul.github.io/blog/posts/teaching-testing/</link><dc:creator>yannpaul</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;I've had a "Testing Python Code" tutorial on the back burner for quite some time. Over and over again I read how it's essential to have tests and particularly high quality tests. Basically I don't need to create a tutorial and I would only have one to provide BU researchers with a live body to pose questions. Ned Batchelder has been presenting &lt;a href="http://nedbatchelder.com/text/test0.html"&gt;a wonderful tutorial&lt;/a&gt; about why and how you might test your code, particularly python code. He's also the maintainer of &lt;code&gt;coverage&lt;/code&gt;, an essential tool to check if you've actually tested every nook and crany. His tutorial is great in video and static form.&lt;/p&gt;
+&lt;p&gt;I've dredged up this particular "wouldn't it be great if I presented about this"-tutorial because I've only recently really played with &lt;code&gt;doctest&lt;/code&gt;. &lt;code&gt;doctest&lt;/code&gt; is a utility that searches through your docs and doc strings for lines that look like an interactive python session and executes those lines. If the output is consistant, the tests passes. This is the tool for you if you are organized enough to write your docs before you write your tests before you write you code.&lt;/p&gt;
+&lt;p&gt;How's it work? Well take this example:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt; phone_how_to.rst
+
+This is the docs for my phone number api. 
+
+    &amp;gt;&amp;gt;&amp;gt; from phones import PhoneNumber
+
+To create a number, you just provide it as a string or integer 
+
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber(1112223333, 'home')
+    [home] (111) 222-3333
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber("1112223333", 'home')
+    [home] (111) 222-3333
+    
+You can also add the optional '1' at the beginning:
+    
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber("11112223333", 'home')
+    [home] (111) 222-3333
+    
+Parenthases, dashes or spaces are ignored:    
+
+    &amp;gt;&amp;gt;&amp;gt; number = PhoneNumber("111-222-3333", 'home')
+    &amp;gt;&amp;gt;&amp;gt; number
+    [home] (111) 222-3333
+    
+If for any reason you need the raw number, and not the string representation, it's available like so:
+
+    &amp;gt;&amp;gt;&amp;gt; number.raw_number
+    '1112223333'
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Writing phone_how_to.rst
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now to run doc test on this code, you run the doctest module as a main script with the '-m' flag. The following is completely broken because the code is not yet written.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;python -m doctest -v phone_how_to.rst
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Trying:
+    from phones import PhoneNumber
+Expecting nothing
+**********************************************************************
+File "phone_how_to.rst", line 4, in phone_how_to.rst
+Failed example:
+    from phones import PhoneNumber
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[0]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        from phones import PhoneNumber
+    ImportError: No module named phones
+Trying:
+    PhoneNumber(1112223333, 'home')
+Expecting:
+    [home] (111) 222-3333
+**********************************************************************
+File "phone_how_to.rst", line 8, in phone_how_to.rst
+Failed example:
+    PhoneNumber(1112223333, 'home')
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[1]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        PhoneNumber(1112223333, 'home')
+    NameError: name 'PhoneNumber' is not defined
+Trying:
+    PhoneNumber("1112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+**********************************************************************
+File "phone_how_to.rst", line 10, in phone_how_to.rst
+Failed example:
+    PhoneNumber("1112223333", 'home')
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[2]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        PhoneNumber("1112223333", 'home')
+    NameError: name 'PhoneNumber' is not defined
+Trying:
+    PhoneNumber("11112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+**********************************************************************
+File "phone_how_to.rst", line 15, in phone_how_to.rst
+Failed example:
+    PhoneNumber("11112223333", 'home')
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[3]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        PhoneNumber("11112223333", 'home')
+    NameError: name 'PhoneNumber' is not defined
+Trying:
+    number = PhoneNumber("111-222-3333", 'home')
+Expecting nothing
+**********************************************************************
+File "phone_how_to.rst", line 20, in phone_how_to.rst
+Failed example:
+    number = PhoneNumber("111-222-3333", 'home')
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[4]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        number = PhoneNumber("111-222-3333", 'home')
+    NameError: name 'PhoneNumber' is not defined
+Trying:
+    number
+Expecting:
+    [home] (111) 222-3333
+**********************************************************************
+File "phone_how_to.rst", line 21, in phone_how_to.rst
+Failed example:
+    number
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[5]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        number
+    NameError: name 'number' is not defined
+Trying:
+    number.raw_number
+Expecting:
+    '1112223333'
+**********************************************************************
+File "phone_how_to.rst", line 26, in phone_how_to.rst
+Failed example:
+    number.raw_number
+Exception raised:
+    Traceback (most recent call last):
+      File "/home/yannpaul/project/blog/blog_env/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "&amp;lt;doctest phone_how_to.rst[6]&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+        number.raw_number
+    NameError: name 'number' is not defined
+**********************************************************************
+1 items had failures:
+   7 of   7 in phone_how_to.rst
+7 tests in 1 items.
+0 passed and 7 failed.
+***Test Failed*** 7 failures.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now let's write the code:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt; phones.py
+from __future__ import print_function
+
+
+class NeedAreaCode(Exception):
+    """Name says it all"""
+    pass
+
+
+class InvalidePhoneNumber(Exception):
+    """When the number just has the wrong digits"""
+    pass
+
+
+class PhoneNumber(object):
+    """
+    A basic phone number class, with some validation for area code and length.
+    
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber(1112223333, 'home')
+    [home] (111) 222-3333
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber("1112223333", 'home')
+    [home] (111) 222-3333
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber("11112223333", 'home')
+    [home] (111) 222-3333
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber("111-222-3333", 'home')
+    [home] (111) 222-3333
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber('1-(800)-666-7777', 'office')
+    [office] (800) 666-7777
+    &amp;gt;&amp;gt;&amp;gt; PhoneNumber('1 2 3 4 5 6 7 8 9 0', 'home')
+    [home] (123) 456-7890
+    
+    """
+
+    def __init__(self, number, tag):
+        number = self._clean_number(number)
+        self._validate_number(number)
+        self._number = number
+        self._area = number[0:3]
+        self._mid = number[3:6]
+        self._last = number[6:]
+        self.tag = tag
+
+    def _clean_number(self, number):
+        number = (str(number)
+                  .replace(' ', '')
+                  .replace('-', '')
+                  .replace('(', '')
+                  .replace(')', ''))
+        if len(number) == 11 and number[0] == '1':
+            number = number[1:]
+        return number
+
+    def _validate_number(self, number):
+        ndigits = len(number)
+        if ndigits == 7:
+            raise NeedAreaCode('for number {}'.format(number))
+        elif ndigits == 10:
+            pass
+        else:
+            raise InvalidePhoneNumber('for number {}'.format(number))
+
+    def __str__(self):
+        return "[{}] ({}) {}-{}".format(self.tag,
+                                        self._area,
+                                        self._mid,
+                                        self._last)
+
+    def __repr__(self):
+        return str(self)
+
+    @property
+    def raw_number(self):
+        return self._number
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Writing phones.py
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;python -m doctest -v phone_how_to.rst
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Trying:
+    from phones import PhoneNumber
+Expecting nothing
+ok
+Trying:
+    PhoneNumber(1112223333, 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber("1112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber("11112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    number = PhoneNumber("111-222-3333", 'home')
+Expecting nothing
+ok
+Trying:
+    number
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    number.raw_number
+Expecting:
+    '1112223333'
+ok
+1 items passed all tests:
+   7 tests in phone_how_to.rst
+7 tests in 1 items.
+7 passed and 0 failed.
+Test passed.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A keen eye will have found tests embedded in the code's docstring. You can run these test in a similar fashion:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;python -m doctest -v phones.py
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Trying:
+    PhoneNumber(1112223333, 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber("1112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber("11112223333", 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber("111-222-3333", 'home')
+Expecting:
+    [home] (111) 222-3333
+ok
+Trying:
+    PhoneNumber('1-(800)-666-7777', 'office')
+Expecting:
+    [office] (800) 666-7777
+ok
+Trying:
+    PhoneNumber('1 2 3 4 5 6 7 8 9 0', 'home')
+Expecting:
+    [home] (123) 456-7890
+ok
+9 items had no tests:
+    phones
+    phones.InvalidePhoneNumber
+    phones.NeedAreaCode
+    phones.PhoneNumber.__init__
+    phones.PhoneNumber.__repr__
+    phones.PhoneNumber.__str__
+    phones.PhoneNumber._clean_number
+    phones.PhoneNumber._validate_number
+    phones.PhoneNumber.raw_number
+1 items passed all tests:
+   6 tests in phones.PhoneNumber
+6 tests in 10 items.
+6 passed and 0 failed.
+Test passed.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The annoying thing about docstring doctests is that they each have their own context, so any 'setUp' needs to be done repeatedly for each docstring. This is not the case for the document based doctests. For further reading, there's a really good &lt;a href="http://pymotw.com/2/doctest/"&gt;module-of-the-week&lt;/a&gt; summary of the &lt;code&gt;doctest&lt;/code&gt; module.&lt;/p&gt;
+&lt;p&gt;So now that I have decent &lt;code&gt;doctest&lt;/code&gt; exposure, what else would I present in a tutorial?&lt;/p&gt;
+&lt;p&gt;Well, for a list of utilities I would cover:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/2/library/doctest.html"&gt;doctest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/2/library/unittest.html"&gt;unittest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/testing-cabal/mock"&gt;mock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://coverage.readthedocs.org/en/coverage-4.0b1/"&gt;coverage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nose.readthedocs.org/en/latest/"&gt;nose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pytest.org/latest/"&gt;pytest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pythonhosted.org/behave/"&gt;behave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yannpaul.github.io/blog/posts/teaching-testing/careers.stackoverflow.com"&gt;ddt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.joke2k.net/faker/"&gt;faker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For concepts, it would be just the basics (and I would probably make Ned's talk a prerequeset):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;unit testing&lt;/li&gt;
+&lt;li&gt;regression tests&lt;/li&gt;
+&lt;li&gt;test coverage&lt;/li&gt;
+&lt;li&gt;mocking&lt;/li&gt;
+&lt;li&gt;test driven development (test first)&lt;/li&gt;
+&lt;li&gt;behavior driven development&lt;/li&gt;
+&lt;li&gt;continuous integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those lists are long, so I can already see this will be a two parter :)&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</description><category>python</category><category>testing</category><category>tutorials</category><guid>https://yannpaul.github.io/blog/posts/teaching-testing/</guid><pubDate>Mon, 03 Aug 2015 20:45:35 GMT</pubDate></item></channel></rss>

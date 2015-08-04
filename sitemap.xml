@@ -18,7 +18,7 @@
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/categories/</loc>
-  <lastmod>2015-07-18</lastmod>
+  <lastmod>2015-08-04</lastmod>
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/categories/cookiecutter/</loc>
@@ -41,12 +41,24 @@
   <lastmod>2015-07-10</lastmod>
  </url>
  <url>
+  <loc>https://yannpaul.github.io/blog/categories/python/</loc>
+  <lastmod>2015-08-04</lastmod>
+ </url>
+ <url>
   <loc>https://yannpaul.github.io/blog/categories/savings/</loc>
   <lastmod>2015-07-18</lastmod>
  </url>
  <url>
+  <loc>https://yannpaul.github.io/blog/categories/testing/</loc>
+  <lastmod>2015-08-04</lastmod>
+ </url>
+ <url>
   <loc>https://yannpaul.github.io/blog/categories/topcoder/</loc>
   <lastmod>2015-07-13</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/categories/tutorials/</loc>
+  <lastmod>2015-08-04</lastmod>
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/galleries/</loc>
@@ -63,6 +75,14 @@
  <url>
   <loc>https://yannpaul.github.io/blog/posts/paying-for-college/</loc>
   <lastmod>2015-07-18</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/posts/phone_how_to/</loc>
+  <lastmod>2015-08-04</lastmod>
+ </url>
+ <url>
+  <loc>https://yannpaul.github.io/blog/posts/teaching-testing/</loc>
+  <lastmod>2015-08-04</lastmod>
  </url>
  <url>
   <loc>https://yannpaul.github.io/blog/posts/topcoder/</loc>
